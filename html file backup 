@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Homework3</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main>
+        <section id="first-section">
+            <div id="XO">
+                <div></div>
+                <div></div>
+            </div>
+            <div id="turn">
+                <div></div>
+                <div>Turn</div>
+            </div>
+            <div id="refresh"></div>
+        </section>
+
+        <section id="grid">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </section>
+
+        <section id="scores">
+            <div>
+                <div>X(YOU)</div>
+                <div class="number">14</div>
+            </div>
+            <div>
+                <div>TIES</div>
+                <div class="number">32</div>
+            </div>
+            <div>
+                <div>O(CPU)</div>
+                <div class="number">11</div>
+            </div>
+        </section>
+    </main>
+
+</body>
+
+</html>

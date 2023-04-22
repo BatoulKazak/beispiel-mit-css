@@ -1,0 +1,229 @@
+body {
+    background-color: rgb(17, 34, 34);
+    min-height: 100vh;
+    display: flex;
+    place-content: center;
+    place-items: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    place-items: center;
+    gap: 1rem;
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    place-content: center;
+    place-items: center;
+    gap: 1rem;
+}
+
+#grid #XO {
+    display: flex;
+    flex-direction: row;
+    place-content: center;
+    place-items: center;
+    gap: 1rem;
+
+    width: 5rem;
+}
+
+#grid #XO div {
+    position: relative;
+}
+
+#grid #XO :first-child::before,
+#grid #XO :first-child::after,
+#grid #turn :first-child::before,
+#grid #turn :first-child::after,
+#grid :nth-child(5)::before,
+#grid :nth-child(7)::before,
+#grid :nth-child(9)::before,
+#grid :nth-child(12)::before,
+#grid :nth-child(5)::after,
+#grid :nth-child(7)::after,
+#grid :nth-child(9)::after,
+#grid :nth-child(12)::after {
+    content: "";
+    position: absolute;
+
+    width: 2rem;
+    height: 0.5rem;
+
+    background-color: rgb(92, 208, 140);
+    border-radius: 0.5vh;
+
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+#grid :nth-child(5)::before,
+#grid :nth-child(7)::before,
+#grid :nth-child(9)::before,
+#grid :nth-child(12)::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60%;
+    height: 1rem;
+}
+
+#grid :nth-child(5)::after,
+#grid :nth-child(7)::after,
+#grid :nth-child(9)::after,
+#grid :nth-child(12)::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    width: 60%;
+    height: 1rem;
+}
+
+#grid #XO :first-child::after,
+#grid #turn :first-child::after {
+    transform: translate(-50%, -50%) rotate(-50deg);
+}
+
+#grid :nth-child(6)::after,
+#grid :nth-child(8)::after,
+#grid :nth-child(11)::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    content: "";
+    width: 2rem;
+    aspect-ratio: 1;
+
+    border-radius: 100%;
+    border: 1rem solid rgb(233, 189, 42);
+    background-color: inherit;
+}
+
+#grid #XO :last-child {
+    position: relative;
+
+    width: 1rem;
+    aspect-ratio: 1;
+
+    border: 0.5rem solid rgb(233, 189, 42);
+    background-color: inherit;
+    border-radius: 100%;
+}
+
+#grid #turn {
+    font-weight: bolder;
+
+    display: flex;
+    flex-direction: row;
+    place-content: center;
+    place-items: center;
+    gap: 1rem;
+
+    width: auto;
+    height: 2rem;
+
+    color: rgb(174, 173, 173);
+    background-color: rgb(47, 63, 62);
+
+    border-radius: 1vh;
+    box-shadow: 0.4rem 0.4rem 0.1rem rgb(9, 18, 14);
+
+    padding: 0 1.5rem;
+}
+
+#grid #turn :first-child::before,
+#grid #turn :first-child::after {
+    background-color: rgb(174, 173, 173);
+    width: 1.35rem;
+    height: 0.35rem;
+}
+
+/* #grid #turn :first-child {
+    position: relative;
+} */
+
+#grid #refresh {
+    background-image: url("refresh-btn.png");
+    background-position: center;
+    background-size: cover;
+
+    border-radius: 1vh;
+    box-shadow: 0.5rem 0.5rem 2px rgb(9, 18, 14);
+
+    width: 2rem;
+    height: 2rem;
+
+    padding: 0.3rem;
+
+    /* place-self: end; */
+}
+
+/* 
+#grid:not(:nth-child(1), :nth-child(2), :nth-child(3)) {
+    width: 5rem;
+    aspect-ratio: 1;
+    background-color: rgb(47, 63, 62);
+
+    border-radius: 1vh;
+    box-shadow: 0.4rem 0.4rem 0.1rem rgb(9, 18, 14);
+} */
+
+#grid .square {
+    position: relative;
+
+    width: 6rem;
+    aspect-ratio: 1;
+    background-color: rgb(47, 63, 62);
+
+    border-radius: 1vh;
+    box-shadow: 0.4rem 0.4rem 0.1rem rgb(9, 18, 14);
+}
+
+#scores {
+    display: flex;
+    flex-direction: row;
+    place-content: center;
+    place-items: center;
+    gap: 2rem;
+}
+
+#scores div {
+    font-size: 0.8rem;
+
+    width: 5.5rem;
+    height: 3.2rem;
+
+    color: #000;
+
+    border-radius: 1vh;
+
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    place-items: center;
+
+    padding: 0.2rem;
+}
+
+#scores div div:last-child {
+    font-weight: bolder;
+}
+
+#scores>div:first-child {
+    background-color: rgb(92, 208, 140);
+}
+
+#scores>div:nth-child(2) {
+    background-color: rgb(120, 157, 134);
+}
+
+#scores>div:nth-child(3) {
+    background-color: rgb(233, 189, 42);
+}
